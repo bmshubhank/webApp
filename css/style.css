@@ -52,19 +52,19 @@ nav a:hover {
 }
 
 /* Hero Section */
-main > section:first-child {
+.hero {
     background: linear-gradient(120deg, #071b49, #2455a4);
     color: white;
     text-align: center;
     padding: 80px 20px;
 }
 
-main > section:first-child h1 {
+.hero h1 {
     font-size: 36px;
     margin-bottom: 25px;
 }
 
-main > section:first-child a {
+.hero a {
     display: inline-block;
     background-color: var(--accent);
     color: var(--primary);
@@ -218,4 +218,52 @@ footer {
     table {
         font-size: 12px;
     }
+}
+/* Booking Form */
+#booking {
+    background-color: #f4f6fb;
+}
+
+#booking h2 {
+    color: #071b49;
+}
+
+#booking form {
+    background-color: white;
+    color: #222;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #ccc;
+}
+
+#booking label {
+    display: inline-block;
+    color: #222;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#booking input,
+#booking select {
+    color: #222;
+    margin-bottom: 10px;
+}
+
+#booking button {
+    margin-right: 10px;
+}
+
+/* Fix Radio Buttons and Checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline;
+    margin-right: 20px;
+    font-weight: normal;
 }

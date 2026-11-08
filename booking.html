@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Ticket Booking Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>IPL 2026 Ticket Booking</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#booking">Book Ticket</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="booking">
+            <h2>Ticket Booking Form</h2>
+
+            <form action="#" method="get">
+
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name"
+                       minlength="3" maxlength="30" required>
+
+                <br><br>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <br><br>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone"
+                       pattern="[0-9]{10}" minlength="10"
+                       maxlength="10" required
+                       title="Enter a valid 10-digit phone number">
+
+                <br><br>
+
+                <label for="match">Select Match:</label>
+                <select id="match" name="match" required>
+                    <option value="">Choose Match</option>
+                    <option value="RCB vs CSK">RCB vs CSK</option>
+                    <option value="MI vs KKR">MI vs KKR</option>
+                    <option value="CSK vs RCB">CSK vs RCB</option>
+                    <option value="KKR vs RCB">KKR vs RCB</option>
+                </select>
+
+                <br><br>
+
+                <label for="stand">Stand Category:</label>
+                <select id="stand" name="stand" required>
+                    <option value="">Choose Stand</option>
+                    <option value="General">General</option>
+                    <option value="Premium">Premium</option>
+                    <option value="VIP">VIP</option>
+                </select>
+
+                <br><br>
+
+                <label for="quantity">Number of Tickets:</label>
+                <input type="number" id="quantity" name="quantity"
+                       min="1" max="10" required>
+
+                <br><br>
+
+                <p>Additional Preference:</p>
+
+                <input type="radio" id="regular" name="preference"
+                       value="Regular" required>
+                <label for="regular">Regular Seating</label>
+
+                <input type="radio" id="family" name="preference"
+                       value="Family">
+                <label for="family">Family Seating</label>
+
+                <br><br>
+
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the booking guidelines.</label>
+
+                <br><br>
+
+                <button type="submit">Submit Booking</button>
+                <button type="reset">Reset Form</button>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 IPL Ticket Booking. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
