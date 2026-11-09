@@ -33,25 +33,35 @@ match.addEventListener("change", updateSummary);
 stand.addEventListener("change", updateSummary);
 quantity.addEventListener("input", updateSummary);
 
+
 // Handle form submission
 form.addEventListener("submit", function(event) {
 
     event.preventDefault();
 
     const name = document.getElementById("name").value;
+    const total = summaryTotal.textContent;
+    const selectedMatch = match.value;
 
+    // Show popup message
+    alert(
+        "Booking Successful!\n\n" +
+        "Thank you, " + name + "!\n" +
+        "Match: " + selectedMatch + "\n" +
+        "Total Amount: ₹" + total
+    );
+
+    // Clear all form fields
+    form.reset();
+
+    // Reset booking summary
     updateSummary();
 
-    message.textContent =
-        "Booking Successful! Thank you, " + name +
-        ". Your booking for " + match.value +
-        " is confirmed. Total Amount: ₹" +
-        summaryTotal.textContent;
-
-    message.style.color = "green";
-    message.style.fontWeight = "bold";
+    message.textContent = "";
 
 });
+
+
 
 // Handle form reset
 form.addEventListener("reset", function() {
