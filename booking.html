@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IPL Ticket Booking</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <script src="js/app.js" defer></script>
+    
 </head>
 <body>
-
-<header>
-    <h1>IPL Ticket Booking</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="index.html">Matches</a>
-    </nav>
-</header>
+    <div id="toast"></div>
+    <header>
+        <h1>IPL Ticket Booking</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html">Matches</a>
+        </nav>
+    </header>
 
 <main>
     <section id="booking">
@@ -72,16 +73,8 @@
 
         </form>
 
-        <div id="bookingSummary">
-            <h3>Booking Summary</h3>
-            <p>Match: <span id="summaryMatch">Not Selected</span></p>
-            <p>Stand: <span id="summaryStand">Not Selected</span></p>
-            <p>Price per Ticket: ₹<span id="summaryPrice">0</span></p>
-            <p>Quantity: <span id="summaryQuantity">0</span></p>
-            <p>Total Amount: ₹<span id="summaryTotal">0</span></p>
-        </div>
+        
 
-        <p id="message"></p>
 
     </section>
 </main>
