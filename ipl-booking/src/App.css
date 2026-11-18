@@ -1,0 +1,282 @@
+
+/* General Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #071b49;
+  --accent: #ffb703;
+  --background: #f4f6fb;
+  --text: #222222;
+  --surface: #ffffff;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navbar */
+header {
+  background: var(--primary);
+  padding: 15px 8%;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+#navbar h2 {
+  color: white;
+  font-size: 26px;
+}
+
+#navbar ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+#navbar ul li a {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#navbar ul li a:hover {
+  color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(120deg, #071b49, #174a91);
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #e1e8f5;
+}
+
+button {
+  background: var(--accent);
+  color: var(--primary);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 5px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #f4a900;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background: #999;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Match Schedule */
+.matches-section {
+  padding: 55px 8%;
+  text-align: center;
+}
+
+.matches-section h2 {
+  color: var(--primary);
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.match-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  text-align: left;
+}
+
+/* Match Cards */
+.match-card {
+  background: var(--surface);
+  padding: 25px;
+  border-radius: 12px;
+  border-top: 5px solid var(--accent);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+}
+
+.match-no {
+  color: #174a91;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.match-card h3 {
+  color: var(--primary);
+  font-size: 20px;
+  margin: 12px 0;
+}
+
+.match-card p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.match-card h4 {
+  margin-top: 15px;
+  color: var(--primary);
+}
+
+.price-list {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.price-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Booking Form */
+#booking {
+  padding: 55px 20px;
+  background: #e9eef8;
+  text-align: center;
+}
+
+#booking h2 {
+  color: var(--primary);
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+#booking form {
+  background: white;
+  max-width: 550px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+#booking label {
+  display: block;
+  font-weight: bold;
+  margin: 15px 0 5px;
+}
+
+#booking input,
+#booking select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.booking-summary {
+  background: #f4f6fb;
+  padding: 18px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+.booking-summary h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+#booking form button {
+  width: 100%;
+  margin: 10px 0 0;
+}
+
+/* Guidelines */
+#guidelines {
+  padding: 40px 20px;
+  text-align: center;
+  background: white;
+}
+
+#guidelines h2 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 25px;
+}
+
+footer p {
+  margin: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 650px) {
+  #navbar {
+    flex-direction: column;
+  }
+
+  #navbar ul {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .matches-section {
+    padding: 35px 18px;
+  }
+
+  #booking form {
+    padding: 20px;
+  }
+}
