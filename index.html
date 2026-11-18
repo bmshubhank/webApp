@@ -12,16 +12,22 @@
 
 <body>
 
-    <header>
-        <h1>IPL 2026 Ticket Booking</h1>
+    
+<header>
+    <h1>IPL 2026 Ticket Booking</h1>
 
-        <nav>
-            <a href="#matches">Matches</a> |
-            <a href="#matches">Book Ticket</a> |
-            <a href="#mybookings">My Bookings</a> |
-            <a href="#guidelines">Guidelines</a>
-        </nav>
-    </header>
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        ☰
+    </button>
+
+    <nav id="navbar">
+        <a href="#matches">Matches</a>
+        <a href="#matches">Book Ticket</a>
+        <a href="#mybookings">My Bookings</a>
+        <a href="#guidelines">Guidelines</a>
+    </nav>
+</header>
+
 
     <main>
 
@@ -58,68 +64,96 @@
             </ul>
         </section>
 
-        <section id="matches">
-            <h2>Match Schedule</h2>
+        
+<section id="matches">
+    <h2>Match Schedule</h2>
 
-            <label for="team">Team Filter:</label>
-            <select id="team">
-                <option>All Teams</option>
-                <option>CSK</option>
-                <option>MI</option>
-                <option>RCB</option>
-                <option>KKR</option>
-            </select>
+    <label for="team">Team Filter:</label>
+    <select id="team">
+        <option value="All">All Teams</option>
+        <option value="CSK">CSK</option>
+        <option value="MI">MI</option>
+        <option value="RCB">RCB</option>
+        <option value="KKR">KKR</option>
+    </select>
 
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Match Number</th>
-                        <th>Teams</th>
-                        <th>Date & Time</th>
-                        <th>Venue</th>
-                        <th>General</th>
-                        <th>Premium</th>
-                        <th>VIP</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
+    <div class="view-buttons">
+        <button type="button" id="gridView">Grid View</button>
+        <button type="button" id="listView">List View</button>
+    </div>
 
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>RCB vs CSK</td>
-                        <td>Sample Date, 7:30 PM</td>
-                        <td>Bengaluru</td>
-                        <td>₹800</td>
-                        <td>₹2000</td>
-                        <td>₹5000</td>
-                        <td><a href="booking.html#booking">Book</a></td>
-                    </tr>
+    <div id="matchContainer" class="match-grid">
 
-                    <tr>
-                        <td>2</td>
-                        <td>MI vs KKR</td>
-                        <td>Sample Date, 7:30 PM</td>
-                        <td>Mumbai</td>
-                        <td>₹900</td>
-                        <td>₹2500</td>
-                        <td>₹5500</td>
-                        <td><a href="booking.html#booking">Book</a></td>
-                    </tr>
+    <article class="match-card" data-team="CSK MI">
+        <p class="match-no">Match 1</p>
+        <h3>CSK vs MI</h3>
+        <p>28 Mar 2026, 7:30 PM</p>
+        <p>M. A. Chidambaram Stadium, Chennai</p>
 
-                    <tr>
-                        <td>3</td>
-                        <td>CSK vs RCB</td>
-                        <td>Sample Date, 3:30 PM</td>
-                        <td>Chennai</td>
-                        <td>₹700</td>
-                        <td>₹1800</td>
-                        <td>₹4500</td>
-                        <td><a href="booking.html#booking">Book</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <ul class="price-list">
+            <li>General: ₹1500</li>
+            <li>Premium: ₹3500</li>
+            <li>VIP: ₹7500</li>
+        </ul>
+
+        <a href="booking.html#booking">
+            <button type="button">Book</button>
+        </a>
+    </article>
+
+    <article class="match-card" data-team="RCB KKR">
+        <p class="match-no">Match 2</p>
+        <h3>RCB vs KKR</h3>
+        <p>29 Mar 2026, 7:30 PM</p>
+        <p>M. Chinnaswamy Stadium, Bengaluru</p>
+
+        <ul class="price-list">
+            <li>General: ₹1800</li>
+            <li>Premium: ₹4000</li>
+            <li>VIP: ₹8000</li>
+        </ul>
+
+        <a href="booking.html#booking">
+            <button type="button">Book</button>
+        </a>
+    </article>
+
+    <article class="match-card" data-team="SRH RR">
+        <p class="match-no">Match 3</p>
+        <h3>SRH vs RR</h3>
+        <p>30 Mar 2026, 3:30 PM</p>
+        <p>Rajiv Gandhi Stadium, Hyderabad</p>
+
+        <ul class="price-list">
+            <li>General: ₹1200</li>
+            <li>Premium: ₹3000</li>
+            <li>VIP: ₹6500</li>
+        </ul>
+
+        <a href="booking.html#booking">
+            <button type="button">Book</button>
+        </a>
+    </article>
+
+    <article class="match-card" data-team="MI RCB">
+        <p class="match-no">Match 4</p>
+        <h3>MI vs RCB</h3>
+        <p>01 Apr 2026, 7:30 PM</p>
+        <p>Wankhede Stadium, Mumbai</p>
+
+        <ul class="price-list">
+            <li>General: ₹2000</li>
+            <li>Premium: ₹4500</li>
+            <li>VIP: ₹9000</li>
+        </ul>
+
+        <a href="booking.html#booking">
+            <button type="button">Book</button>
+        </a>
+    </article>
+
+</div>
+</section>
 
         <section id="mybookings">
             <h2>My Ticket Bookings</h2>
@@ -142,7 +176,7 @@
 
         <section id="guidelines">
             <h2>Stadium Guidelines</h2>
-
+            <div class="guidelines-grid">
             <article>
                 <h3>Ticket Verification</h3>
                 <p>Carry your valid ticket for verification at the stadium entrance.</p>
@@ -157,6 +191,7 @@
                 <h3>Prohibited Items</h3>
                 <p>Weapons, fireworks and other prohibited items are not allowed inside the stadium.</p>
             </article>
+            </div>
         </section>
 
     </main>

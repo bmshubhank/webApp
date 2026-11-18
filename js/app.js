@@ -101,4 +101,51 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
+    // Activity 8 - Grid and List View
+
+const matchContainer = document.getElementById("matchContainer");
+const gridButton = document.getElementById("gridView");
+const listButton = document.getElementById("listView");
+
+if (matchContainer && gridButton && listButton) {
+
+    gridButton.addEventListener("click", function () {
+        matchContainer.classList.remove("match-list");
+        matchContainer.classList.add("match-grid");
+    });
+
+    listButton.addEventListener("click", function () {
+        matchContainer.classList.remove("match-grid");
+        matchContainer.classList.add("match-list");
+    });
+
+}
+
+
+// Activity 8 - Team Filter
+
+const teamFilter = document.getElementById("team");
+
+if (teamFilter && matchContainer) {
+
+    teamFilter.addEventListener("change", function () {
+
+        const selectedTeam = teamFilter.value;
+        const cards = matchContainer.querySelectorAll(".match-card");
+
+        cards.forEach(function (card) {
+
+            const teams = card.dataset.team;
+
+            if (selectedTeam === "All" || teams.includes(selectedTeam)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
+
+    });
+
+}
 });
