@@ -1,16 +1,33 @@
-# React + Vite
+# IPL Ticket Booking
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Run locally
 
-Currently, two official plugins are available:
+From this directory, install dependencies and start the Vite development server:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm install
+npm run dev
+```
 
-## React Compiler
+The `.env.local` file must contain the Supabase project URL and the project's
+publishable/anon key:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```env
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-publishable-or-anon-key
+```
 
-## Expanding the ESLint configuration
+Restart `npm run dev` after changing environment variables. Never put a
+`service_role` or secret key in a `VITE_` variable.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Set up the bookings table
+
+For a new project, open **SQL Editor** and run
+[`supabase/schema.sql`](./supabase/schema.sql). If `public.bookings` already
+exists, run [`supabase/migrate-bookings.sql`](./supabase/migrate-bookings.sql)
+instead to add missing columns and refresh the API schema cache. Then submit a
+test booking in the app and check Supabase **Table Editor**.
+
+The table uses Row Level Security and permits public booking inserts because
+this app does not currently have user sign-in. Do not add a public read policy
+or expose secret keys in the browser.

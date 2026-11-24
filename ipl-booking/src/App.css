@@ -224,6 +224,19 @@ button:disabled {
   margin-bottom: 10px;
 }
 
+.booking-status {
+  margin: 12px 0;
+  font-size: 15px;
+}
+
+.booking-status.success {
+  color: #176b35;
+}
+
+.booking-status.error {
+  color: #b42318;
+}
+
 #booking form button {
   width: 100%;
   margin: 10px 0 0;
